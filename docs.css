@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* 
+You can also create a custom theme for TypeDoc:
+https://typedoc.org/guides/themes/
+This is just a quick hack, but you can also look at docs/assets/style.css
+*/
+
+:root {
+  /* Light */
+  --light-color-background: rgb(
+    237,
+    242,
+    249
+  ); /* --light-color-background: #f2f4f8; */
+  --light-color-background-secondary: rgb(
+    237,
+    242,
+    249
+  ); /* --light-color-background-secondary: #eff0f1; */
+  --light-color-warning-text: #222;
+  --light-color-background-warning: #e6e600;
+  --light-color-icon-background: #fff; /* --light-color-icon-background: var(--light-color-background); */
+
+  --light-color-accent: #c5c7c9;
+  --light-color-active-menu-item: var(--light-color-accent);
+  --light-color-text: #222;
+  --light-color-text-aside: #6e6e6e;
+  --light-color-link: #1f70c2;
+
+  --light-color-ts-keyword: #056bd6;
+  --light-color-ts-project: #b111c9;
+  --light-color-ts-module: var(--light-color-ts-project);
+  --light-color-ts-namespace: var(--light-color-ts-project);
+  --light-color-ts-enum: #7e6f15;
+  --light-color-ts-enum-member: var(--light-color-ts-enum);
+  --light-color-ts-variable: #4760ec;
+  --light-color-ts-function: #572be7;
+  --light-color-ts-class: #1f70c2;
+  --light-color-ts-interface: #108024;
+  --light-color-ts-constructor: var(--light-color-ts-class);
+  --light-color-ts-property: var(--light-color-ts-variable);
+  --light-color-ts-method: var(--light-color-ts-function);
+  --light-color-ts-call-signature: var(--light-color-ts-method);
+  --light-color-ts-index-signature: var(--light-color-ts-property);
+  --light-color-ts-constructor-signature: var(--light-color-ts-constructor);
+  --light-color-ts-parameter: var(--light-color-ts-variable);
+  /* type literal not included as links will never be generated to it */
+  --light-color-ts-type-parameter: #a55c0e;
+  --light-color-ts-accessor: var(--light-color-ts-property);
+  --light-color-ts-get-signature: var(--light-color-ts-accessor);
+  --light-color-ts-set-signature: var(--light-color-ts-accessor);
+  --light-color-ts-type-alias: #d51270;
+  /* reference not included as links will be colored with the kind that it points to */
+
+  --light-external-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='10' height='10'><path fill-opacity='0' stroke='%23000' stroke-width='10' d='m43,35H5v60h60V57M45,5v10l10,10-30,30 20,20 30-30 10,10h10V5z'/></svg>");
+  --light-color-scheme: light;
+}
+
+/* Also change code highlighting colors. */
+:root[data-theme='light'] {
+  --hl-0: var(--light-hl-0);
+  --hl-1: var(--light-hl-1);
+  --hl-2: var(--light-hl-2);
+  --hl-3: var(--light-hl-3);
+  --hl-4: var(--light-hl-4);
+  --hl-5: var(--light-hl-5);
+  --hl-6: var(--light-hl-6);
+  --hl-7: var(--light-hl-7);
+  --hl-8: var(--light-hl-8);
+  --code-background: var(--light-code-background);
+}
+
+h1 {
+  color: #444;
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+
+h1 > a:not(.link),
+h2 > a:not(.link),
+h3 > a:not(.link),
+h4 > a:not(.link),
+h5 > a:not(.link),
+h6 > a:not(.link) {
+  color: #444;
+}
+
+p > code {
+  background-color: transparent;
+  color: #ec4899;
+}
+
+pre {
+  border: 0.5px solid #444;
+}
+
+body > footer {
+  display: none;
+}
+
+.tsd-page-toolbar {
+  border-bottom-color: #444;
+  border-bottom-width: 0.5px;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+#tsd-search.has-focus {
+  background-color: #fff;
+  border-left: 0.5px solid #444;
+  border-right: 0.5px solid #444;
+}
+
+/* No need for for this since we're creating our styles here. */
+.tsd-theme-toggle {
+  display: none;
+}
+
+.tsd-signature,
+.tsd-signatures .tsd-signature {
+  background-color: #fff;
+  border: 0.5px solid #444;
+  border-radius: 5px;
+}
+
+.tsd-kind-type-alias {
+  color: #ec4899;
+}
+
+.tsd-kind-property {
+  color: #ec4899;
+}
+
+h5 .tsd-kind-property {
+  font-weight: normal;
+  font-family: monospace;
+}
+
+.tsd-navigation a.current,
+.tsd-page-navigation a.current {
+  background: #fff;
+  border: 0.5px solid #444;
+  border-radius: 5px;
+}
