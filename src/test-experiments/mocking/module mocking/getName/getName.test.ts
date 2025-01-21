@@ -11,27 +11,28 @@ import { getName } from './'
 // in the module and replace it with vi.fn(), which by default
 // returns undefined.
 //
-// vi.mock('../utils')
+//vi.mock('../utils')
 //
 // If you want to set it with the expected return value do this:
 // vi.mock('../utils', () => ({  getMyName: vi.fn().mockReturnValue('David') }))
 //
 // As another intersting test of Vitest, if for some reason we did this here:
 //
-//   vi.mock('../utils', () => ({ getExchangeRate: vi.fn().mockReturnValue(1.5) }))
+// vi.mock('../utils', () => ({ getExchangeRate: vi.fn().mockReturnValue(1.5) }))
 //
 // Then Vitest would error with:
 //
 //   Error: [vitest] No "getMyName" export is defined on the "../utils" mock. Did you forget to return it from "vi.mock"?
 //   If you need to partially mock a module, you can use "importOriginal" helper inside:
 //
-//   vi.mock("../utils", async (importOriginal) => {
-//     const actual = await importOriginal()
-//     return {
-//       ...actual,
-//       // your mocked methods
-//     }
-//   })
+// vi.mock('../utils', async (importOriginal) => {
+//   const actual = await importOriginal()
+//   return {
+//     ...(typeof actual === 'object' ? actual : {})
+//     // your mocked methods
+//     // getMyName: vi.fn().mockReturnValue('Dave')
+//   }
+// })
 //
 // That's a super useful message! It also implies that using the function for
 // the second argument completely replaces the module.

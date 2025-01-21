@@ -46,6 +46,8 @@ describe('fireCallback()...', () => {
     // fireCallback() returns : callback?.(message), so what we're
     // testing here is that the return value is correctly returning
     // the result of the executed callback.
+    // One could also just do this:
+    // const mockCallback = vi.fn((value) => value)
     mockCallback.mockReturnValue(message)
     const result = fireCallback(message, mockCallback)
 

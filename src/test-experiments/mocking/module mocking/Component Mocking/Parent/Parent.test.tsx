@@ -4,9 +4,9 @@ import { Parent } from './'
 // This example is intended to demonstrate how one can mock a React
 // component within another React component.
 
-vi.mock('../Child', () => ({
-  Child: vi.fn().mockReturnValue(<div>Mock Child</div>)
-}))
+// Naive Approach:
+// vi.mock('../Child', () => ({ Child: vi.fn().mockReturnValue(<div>Mock Child</div>) }))
+
 vi.mock('../Child', async (importOriginal) => {
   const originalModule: any = await importOriginal()
   return {
@@ -29,7 +29,7 @@ describe('Parent...', () => {
     const mockChildText = screen.getByText(/mock child/i)
     expect(mockChildText).toBeInTheDocument()
 
-    // const childText = screen.queryByText(/this is the child/i)
-    // expect(childText).not.toBeInTheDocument()
+    const childText = screen.queryByText(/this is the child/i)
+    expect(childText).not.toBeInTheDocument()
   })
 })
