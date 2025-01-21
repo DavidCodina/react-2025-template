@@ -21,7 +21,7 @@ import {
   LexicalEditor
 } from 'lexical'
 import * as React from 'react'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, JSX } from 'react'
 
 import {
   $createInlineImageNode,

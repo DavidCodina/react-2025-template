@@ -1,6 +1,6 @@
 import './Placeholder.css'
 import * as React from 'react'
-import { ReactNode, CSSProperties } from 'react'
+import { ReactNode, CSSProperties, JSX } from 'react'
 
 interface IPlaceholder {
   children: ReactNode

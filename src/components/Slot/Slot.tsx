@@ -155,7 +155,7 @@ const Slot = React.forwardRef<HTMLElement, SlotProps>((props, forwardedRef) => {
         if (React.Children.count(newElement) > 1)
           return React.Children.only(null)
         return React.isValidElement(newElement)
-          ? (newElement.props.children as React.ReactNode)
+          ? ((newElement.props as any).children as React.ReactNode)
           : null
       } else {
         return child
@@ -192,7 +192,7 @@ const SlotClone = React.forwardRef<any, SlotCloneProps>(
 
     if (React.isValidElement(children)) {
       return React.cloneElement(children, {
-        ...mergeProps(slotProps, children.props),
+        ...mergeProps(slotProps, children.props as any),
 
         // Typescript is complaing about ref. No clue why this
         // is happening, but it's straight from the source code.
@@ -225,7 +225,9 @@ const Slottable = ({ children }: { children: React.ReactNode }) => {
 // For example, numbers and object literals are not valid elements.
 // Some strings are valid elements like 'p', but not 'pizza'.
 
-function isSlottable(child: React.ReactNode): child is React.ReactElement {
+function isSlottable(
+  child: React.ReactNode
+): child is React.ReactElement<{ children: React.ReactNode }> {
   return React.isValidElement(child) && child.type === Slottable
 }
 

@@ -54,7 +54,7 @@ export const Consumer = SliderContext.Consumer
 export const SliderProvider = ({ children }: PropsWithChildren) => {
   const [childElements, setChildElements] = useState<ChildElements>([])
   const [currentSlide, setCurrentSlide] = useState<SlideType>(initialSlide)
-  const previousSlideRef = useRef<any>()
+  const previousSlideRef = useRef<any>(undefined)
   const previousSlide = previousSlideRef.current
   const [_, setQueue] = useState<SlideType[]>([initialSlide])
   const [isAnimating, setIsAnimating] = useState(false)

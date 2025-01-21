@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, JSX } from 'react'
 import type { LexicalEditor } from 'lexical'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { TextNode } from 'lexical'

@@ -37,7 +37,7 @@ export const FontFamilyDropDown = ({
   editor: LexicalEditor
   title?: string
   value: string
-}): JSX.Element => {
+}): React.JSX.Element => {
   const handleClick = useCallback(
     (option: string) => {
       editor.update(() => {

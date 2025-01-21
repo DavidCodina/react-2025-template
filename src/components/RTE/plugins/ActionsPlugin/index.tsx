@@ -1,5 +1,5 @@
 import './ActionsPlugin.css'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, JSX } from 'react'
 
 import type { LexicalEditor } from 'lexical'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'

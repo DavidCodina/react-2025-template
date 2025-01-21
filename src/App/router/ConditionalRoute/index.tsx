@@ -1,3 +1,5 @@
+import { JSX } from 'react'
+
 import { Navigate } from 'react-router'
 
 interface IConditionalRoute {

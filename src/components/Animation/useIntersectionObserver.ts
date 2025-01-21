@@ -20,7 +20,7 @@ interface Args extends IntersectionObserverInit {
 // caching the observer.
 
 export function useIntersectionObserver(
-  elementRef: RefObject<Element>,
+  elementRef: RefObject<Element | null>,
   {
     threshold = 0,
     root = null,
@@ -42,7 +42,7 @@ export function useIntersectionObserver(
 
   const [observer, setObserver] = useState<IntersectionObserver>()
   const [entry, setEntry] = useState<IntersectionObserverEntry>()
-  const callback = useRef<Args['onChange']>()
+  const callback = useRef<Args['onChange']>(undefined)
 
   // Store the onChange callback in a `ref`, so we can access the latest instance
   // inside the `useEffect`, but without triggering a rerender.

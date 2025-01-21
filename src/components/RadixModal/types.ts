@@ -1,4 +1,4 @@
-import { ReactNode, CSSProperties } from 'react'
+import { ReactNode, CSSProperties, JSX } from 'react'
 
 export interface IRadixModal {
   overlayClassName?: string

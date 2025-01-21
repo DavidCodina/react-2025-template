@@ -34,7 +34,10 @@ export const useExtractValidChildren = ({
     return Children.toArray(children).reduce((acc: ReactNode[], child) => {
       if (isValidElement(child)) {
         if (isFragment(child)) {
-          return [...acc, ...extractValidChildren(child.props.children)]
+          return [
+            ...acc,
+            ...extractValidChildren((child.props as any).children)
+          ]
         }
         return [...acc, child]
       } else if (

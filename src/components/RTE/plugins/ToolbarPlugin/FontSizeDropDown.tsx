@@ -1,6 +1,6 @@
 // https://github.com/facebook/lexical/blob/main/packages/lexical-playground/src/plugins/ToolbarPlugin/index.tsx
 
-import { useCallback } from 'react'
+import { useCallback, JSX } from 'react'
 import { $patchStyleText } from '@lexical/selection'
 import { $getSelection, LexicalEditor } from 'lexical'
 import DropDown, { DropDownItem } from './Dropdown'

@@ -7,7 +7,7 @@ type Func = (...args: any[]) => void
 // Usage: useOutsideClick(modalRef, cb)
 
 export const useOutsideClick = (
-  ref: RefObject<HTMLElement>,
+  ref: RefObject<HTMLElement | null>,
   callback: Func
 ) => {
   useEffect(() => {

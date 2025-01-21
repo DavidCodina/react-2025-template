@@ -8,7 +8,7 @@ import {
   URL_MATCHER
 } from '@lexical/react/LexicalAutoEmbedPlugin'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { useMemo, useState } from 'react'
+import { useMemo, useState, JSX } from 'react'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 

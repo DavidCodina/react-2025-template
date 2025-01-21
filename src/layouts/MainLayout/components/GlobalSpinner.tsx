@@ -1,5 +1,5 @@
 // Third-party imports
-import { useState, useEffect } from 'react'
+import { useState, useEffect, JSX } from 'react'
 import { useNavigation } from 'react-router'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'

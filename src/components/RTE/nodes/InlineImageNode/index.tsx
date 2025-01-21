@@ -11,7 +11,7 @@ import type {
 
 import { $applyNodeReplacement, DecoratorNode } from 'lexical'
 import * as React from 'react'
-import { Suspense } from 'react'
+import { Suspense, JSX } from 'react'
 
 const InlineImageComponent = React.lazy(() => import('./InlineImageComponent'))
 

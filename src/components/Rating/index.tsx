@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, JSX } from 'react'
 import { FullStar, EmptyStar, HeartEmptyIcon, HeartFullIcon } from './shapes'
 import { RatingProps } from './types'
 

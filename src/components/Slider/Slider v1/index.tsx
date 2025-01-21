@@ -103,16 +103,20 @@ export const Slider = ({
 
   // Convert children to an array if it's not already.
 
-  let childrenArray: (
-    | ReactElement<any, string | React.JSXElementConstructor<any>>
-    | undefined
-  )[]
+  let childrenArray: any
+  // | unknown[]
+  // | (
+  //     | ReactElement<any, string | React.JSXElementConstructor<any>>
+  //     | undefined
+  //   )[]
 
   // Check if children is Fragment, if so unwrap it.
   if (
     children &&
     'type' in children &&
     children.type === Fragment &&
+    children.props &&
+    typeof children.props === 'object' &&
     'children' in children.props
   ) {
     const unwrappedChildren = children.props.children

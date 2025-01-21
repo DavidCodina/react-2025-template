@@ -24,7 +24,7 @@ import {
   SELECTION_CHANGE_COMMAND
 } from 'lexical'
 
-import { Suspense, useCallback, useEffect, useRef, useState } from 'react'
+import { Suspense, useCallback, useEffect, useRef, useState, JSX } from 'react'
 import brokenImage from './image-broken.svg'
 
 import ImageResizer from '../../ui/ImageResizer'

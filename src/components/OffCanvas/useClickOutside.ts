@@ -41,7 +41,7 @@ export function useClickOutside<T extends HTMLElement = any>({
   nodes?: (HTMLElement | null)[]
   disabled?: boolean
 }) {
-  const ref = useRef<T>()
+  const ref = useRef<T>(undefined)
   const handlerRef = useRef(handler)
 
   /* ======================

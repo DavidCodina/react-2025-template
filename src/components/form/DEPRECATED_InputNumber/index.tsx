@@ -177,7 +177,7 @@ export const InputNumber = forwardRef<any, IInputNumber>(
 
     // Set within handleMinusOnKeyDown().
     // Used by formatValue() --> formatMinuses()
-    const hasPreviousMinusRef = useRef<boolean>()
+    const hasPreviousMinusRef = useRef<boolean>(undefined)
 
     //^ Where is this used?
     const overDecimalScaleByRef = useRef(0)

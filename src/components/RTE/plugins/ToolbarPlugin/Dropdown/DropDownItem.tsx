@@ -1,4 +1,11 @@
-import { useEffect, useRef, MouseEvent, ReactNode, useContext } from 'react'
+import {
+  useEffect,
+  useRef,
+  MouseEvent,
+  ReactNode,
+  useContext,
+  RefObject
+} from 'react'
 import { DropDownContext } from './DropDownContext'
 
 /* ========================================================================
@@ -33,7 +40,7 @@ export const DropDownItem = ({
 
   useEffect(() => {
     if (ref && ref.current) {
-      registerItem(ref)
+      registerItem(ref as RefObject<HTMLButtonElement>)
     }
   }, [ref, registerItem])
 

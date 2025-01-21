@@ -1,3 +1,4 @@
+import { JSX } from 'react'
 import { FORMAT_TEXT_COMMAND, LexicalEditor } from 'lexical'
 import DropDown, { DropDownItem } from './Dropdown'
 

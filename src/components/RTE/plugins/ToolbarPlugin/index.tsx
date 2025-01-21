@@ -1,7 +1,7 @@
 // https://github.com/facebook/lexical/blob/main/packages/lexical-playground/src/plugins/ToolbarPlugin/index.tsx
 
 import './ToolbarPlugin.css'
-import { Dispatch, useCallback, useEffect, useState } from 'react'
+import { Dispatch, useCallback, useEffect, useState, JSX } from 'react'
 
 import {
   $isCodeNode,

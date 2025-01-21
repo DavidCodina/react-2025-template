@@ -1,5 +1,5 @@
 // Third-party imports
-import { ReactNode, CSSProperties } from 'react'
+import { ReactNode, CSSProperties, JSX } from 'react'
 
 export interface IToolTip {
   trigger?: JSX.Element

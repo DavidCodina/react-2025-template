@@ -23,7 +23,7 @@ import {
   LexicalEditor
 } from 'lexical'
 import * as React from 'react' //* Just added.
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, JSX } from 'react'
 
 import {
   $createImageNode,

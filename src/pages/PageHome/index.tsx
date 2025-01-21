@@ -84,11 +84,6 @@ const PageHome = () => {
 
         <HR style={{ marginBottom: 50 }} />
 
-        <div className='text-center text-4xl leading-relaxed font-black text-rose-500'>
-          Next Steps
-          <br /> Update to React 19 Bitch!
-        </div>
-
         {/* 
         <div className='text-center text-3xl font-bold text-blue-500'>
           {import.meta.env.VITE_SECRET}

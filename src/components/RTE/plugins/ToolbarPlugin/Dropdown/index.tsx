@@ -7,7 +7,8 @@ import {
   useEffect,
   useMemo,
   useRef,
-  useState
+  useState,
+  JSX
 } from 'react'
 import { createPortal } from 'react-dom'
 

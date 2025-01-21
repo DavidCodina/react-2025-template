@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from 'react'
 
 export function useThrottle(value: any, interval = 500) {
   const [throttledValue, setThrottledValue] = useState(value)
-  const lastUpdated = useRef<any>()
+  const lastUpdated = useRef<any>(undefined)
 
   useEffect(() => {
     const now = Date.now()
