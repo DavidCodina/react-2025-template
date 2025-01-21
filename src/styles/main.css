@@ -192,13 +192,17 @@ We can do this:
 ======================================================================== */
 /* The @layer components is provided as a place for you to add your own component classes */
 
+/* I'm not sure if this works because nesting is baked into Taiwlind v4 or because
+this is the CSS native nesting. */
 @layer components {
   .nesting-test {
     height: 100px;
     width: 100px;
     background-color: #15c213;
+    border: 2px solid black;
+    border-radius: 5px;
     &:hover {
-      background-color: var(--color-red-500);
+      background-color: var(--color-rose-500);
     }
   }
 

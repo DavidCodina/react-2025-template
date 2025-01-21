@@ -84,6 +84,11 @@ const PageHome = () => {
 
         <HR style={{ marginBottom: 50 }} />
 
+        <div className='text-center text-4xl leading-relaxed font-black text-rose-500'>
+          Next Steps
+          <br /> Update to React 19 Bitch!
+        </div>
+
         {/* 
         <div className='text-center text-3xl font-bold text-blue-500'>
           {import.meta.env.VITE_SECRET}
@@ -141,7 +146,7 @@ const PageHome = () => {
 
         {/* <div className='mb-6 h-32 w-32 rounded-lg border border-black not-hover:bg-neutral-500'></div>
 
-        <div className='nesting-test mb-6 hover:bg-purple-500'></div>
+        <div className='nesting-test mb-6'></div>
 
         <div className='mb-6 h-32 w-32 bg-(--color-blue-500)' />
 
