@@ -50,7 +50,7 @@
     "framer-motion": "^11.18.1",
     "lexical": "^0.17.1",
     "material-symbols": "^0.27.2",
-    "msw": "^2.2.14",
+    "msw": "^2.7.0",
     "overlayscrollbars": "^2.7.3",
     "overlayscrollbars-react": "^0.5.6",
     "polished": "^4.3.1",

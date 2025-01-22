@@ -15,6 +15,32 @@ const ClickCounter = ({ dataTestId }: { dataTestId?: string }) => {
   )
 }
 
+const Amount = () => {
+  const [value, setValue] = useState('0')
+  const [amount, setAmount] = useState(0)
+
+  return (
+    <>
+      <input
+        name='amount'
+        onChange={(e) => setValue(e.target.value)}
+        type='number'
+        value={value}
+      />
+
+      <button
+        onClick={() => {
+          setAmount(parseFloat(value))
+        }}
+      >
+        Set Amount
+      </button>
+
+      <div data-testid='amount'>Amount: {amount}</div>
+    </>
+  )
+}
+
 /* ========================================================================
 
 ======================================================================== */
@@ -174,6 +200,91 @@ describe('RTL Interactions...', () => {
   /* ======================
 
   ====================== */
-  // Todo:
   // Keyboard Interactions: https://www.youtube.com/watch?v=kqX14UyjhDM&list=PLC3y8-rFHvwirqe1KHFCHJ0RqNuN61SJd&index=37
+
+  test('<Amount /> typing...', async () => {
+    const user = userEvent.setup()
+    render(<Amount />)
+    const spinButton = screen.getByRole('spinbutton') as HTMLInputElement
+    const button = screen.getByRole('button')
+    const amount = screen.getByTestId('amount')
+
+    ///////////////////////////////////////////////////////////////////////////
+    //
+    // Gotcha:
+    //
+    // When you type '10' into the spinButton (i.e., input type="number"), the value is set to the numeric representation of that string,
+    // which is 10 (a number). Therefore, when you check the value of the input using expect(input).toHaveValue('10'), it fails because
+    // you're comparing a string to a number. This is super confusing because in actual practice, the `value` state is a string.
+    //
+    //   console.log({ value: spinButton.value, type: typeof spinButton.value })
+    //   stdout: { value: '10', type: 'string' }
+    //
+    // Since the input field is of type number, the browser interprets this string as a numeric value.
+    // In practice, the value is returned as a string when accessed via JavaScript, but the internal
+    // representation for an input of type number is numeric.
+    //
+    // Ultimately, what we probably want 99% of the time is toHaveDisplayValue() and NOT toHaveValue().
+    // toHaveDisplayValue() is actually what the end user sees.
+    //
+    //   https://github.com/testing-library/jest-dom?tab=readme-ov-file#tohavevalue
+    //   https://github.com/testing-library/jest-dom?tab=readme-ov-file#tohavedisplayvalue
+    //
+    ///////////////////////////////////////////////////////////////////////////
+    await user.type(spinButton, '10')
+    expect(spinButton).toHaveValue(10)
+    expect(spinButton).toHaveDisplayValue('10')
+
+    expect(amount).toHaveTextContent('0')
+    await user.click(button)
+    expect(amount).toHaveTextContent('10')
+
+    await user.clear(spinButton)
+    expect(spinButton).toHaveValue(null)
+    expect(spinButton).toHaveDisplayValue('')
+  })
+
+  /* ======================
+
+  ====================== */
+
+  test('<Amount /> Tabbing...', async () => {
+    const user = userEvent.setup()
+    render(<Amount />)
+    const spinButton = screen.getByRole('spinbutton') as HTMLInputElement
+    const button = screen.getByRole('button')
+
+    await user.tab()
+    expect(spinButton).toHaveFocus()
+
+    await user.tab()
+    expect(button).toHaveFocus()
+  })
+
+  /* ======================
+
+  ====================== */
+
+  test('upload file', async () => {
+    render(
+      <div>
+        <label htmlFor='file-uploader'>Upload file:</label>
+        <input id='file-uploader' type='file' />
+      </div>
+    )
+
+    const file = new File(['hello'], 'hello.png', { type: 'image/png' })
+    const input = screen.getByLabelText(/upload file/i) as HTMLInputElement
+    await userEvent.upload(input, file)
+
+    expect(input.files?.[0]).toBe(file)
+    expect(input.files?.item(0)).toBe(file)
+    expect(input.files).toHaveLength(1)
+  })
+
+  /* ======================
+
+  ====================== */
+  // Keyboard API - See here at 8:45:
+  // https://www.youtube.com/watch?v=kqX14UyjhDM&list=PLC3y8-rFHvwirqe1KHFCHJ0RqNuN61SJd&index=38
 })
