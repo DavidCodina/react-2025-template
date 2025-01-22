@@ -10,6 +10,7 @@ export * from './truthyArray'
 export * from './isPromise'
 export * from './isStringDict'
 export * from './isResponseObject'
+export * from './CustomError'
 
 /* ======================
       isFileArray()
